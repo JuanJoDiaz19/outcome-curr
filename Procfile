@@ -1,1 +1,1 @@
- web: java -Dserver.port=$PORT -jar outcome-curr-mgmt/target/*.jar
+ web: java -Dserver.port=9092 -jar outcome-curr-mgmt/target/*.jar
