@@ -37,7 +37,7 @@ pipeline {
         stage('Deploy to Dokku') {
             steps {
                 sshagent(['ssh-dokku']) {
-                    sh "git remote add dokku dokku@ec2-18-191-161-171.us-east-2.compute.amazonaws.com:outcurr || true"
+                    sh "git remote add dokku dokku@helpme-god-juanjo.centralus.cloudapp.azure.com:outcurr || true"
                     sh "git push dokku main -f"
                 }
             }
