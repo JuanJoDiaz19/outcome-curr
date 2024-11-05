@@ -21,7 +21,6 @@ pipeline {
 
         stage('Test') {
             steps {
-                sh "pwd"
                 sh 'mvn test'
             }
         }
@@ -35,12 +34,19 @@ pipeline {
             }
         }
 
+        stage('Code Coverage') {
+            steps {
+                jacoco execPattern: "**/target/jacoco.exec"
+            }
+
+        }
+
         stage('Deploy to Dokku') {
             steps {
                 sshagent(['ssh-dokku']) {
                     sh "git remote remove dokku || true"
                     sh "git remote add dokku dokku@helpme-god-juanjo.centralus.cloudapp.azure.com:outcurr || true"
-                    sh "git push dokku main -f"
+                    sh "git push dokku HEAD:main -f"
                 }
             }
         }
