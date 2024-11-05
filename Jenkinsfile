@@ -29,7 +29,7 @@ pipeline {
             steps {
                 sh '''
                     mkdir -p ~/.ssh
-                    ssh-keyscan -H ec2-18-191-161-171.us-east-2.compute.amazonaws.com >> ~/.ssh/known_hosts
+                    ssh-keyscan -H helpme-god-juanjo.centralus.cloudapp.azure.com >> ~/.ssh/known_hosts
                 '''
             }
         }
