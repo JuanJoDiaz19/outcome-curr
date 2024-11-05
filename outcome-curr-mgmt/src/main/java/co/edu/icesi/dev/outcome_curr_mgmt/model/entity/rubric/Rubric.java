@@ -26,7 +26,7 @@ public class Rubric implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @Id
-    @SequenceGenerator(name = "RUBRIC_RBID_GENERATOR", sequenceName = "RUBRIC_SEQ")
+    @SequenceGenerator(name = "RUBRIC_RBID_GENERATOR", sequenceName = "RUBRIC_SEQ", allocationSize = 1)
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "RUBRIC_RBID_GENERATOR")
     @Column(name = "RB_ID")
     private long rbId;

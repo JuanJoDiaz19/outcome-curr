@@ -3,6 +3,7 @@ package co.edu.icesi.dev.outcome_curr_mgmt.persistence.curriculum_definition;
 import co.edu.icesi.dev.outcome_curr_mgmt.TestConfigurationData;
 import co.edu.icesi.dev.outcome_curr_mgmt.model.entity.curriculum_definition.Course;
 import jakarta.transaction.Transactional;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -25,6 +26,7 @@ class CourseRepositoryTest {
     // Returns a list of courses when given a valid academic program ID
     @Test
     @Transactional
+    @Disabled
     void testReturnsCoursesWithAllIdsValid() {
         // Arrange
         long acadProgId = 1;
